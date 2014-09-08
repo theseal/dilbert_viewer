@@ -18,7 +18,7 @@ print <<ENDHTML;
 <body>
 ENDHTML
 
-my $count;
+my $count = 1;
 while ($count < 30) {
     $date = strftime "%Y%m%d", localtime(time() - 24*60*60*$count);
     print "<img src=\"http://tjanster.idg.se/dilbertimages/dil$date.gif\" alt=\"dibert.gif\"/>";
