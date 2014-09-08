@@ -10,12 +10,13 @@ print "Content-type: text/html\n\n";
 
 print <<ENDHTML;
 <!DOCTYPE html>
-
 <html>
-<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Dilbert</title>
+</head>
 <body>
-    <img src="http://tjanster.idg.se/dilbertimages/dil$date.gif" >
+    <img src="http://tjanster.idg.se/dilbertimages/dil$date.gif" alt="dilbert.gif"/>
 </body>
 </html>
-
 ENDHTML
