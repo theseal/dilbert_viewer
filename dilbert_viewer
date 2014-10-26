@@ -14,6 +14,7 @@ print $q->start_html('Dilbert');
 my $count = 0;
 while ($count < 30) {
     $date = strftime "%Y%m%d", localtime(time() - 24*60*60*$count);
+    print $q->h3($date) . "\n";
     print $q->p("<img src=\"http://tjanster.idg.se/dilbertimages/dil$date.gif\" alt=\"dibert.gif\"/>") . "\n";
     $count++;
 }
