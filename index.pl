@@ -48,6 +48,37 @@ while ($count < 30) {
     print_strip($date);
     $count++;
 }
+print <<'ENDHTML';
+<script src="./jquery.min.js"></script>
+<script src="./jquery.endless-scroll.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(window).endlessScroll();
+$(window).endlessScroll({
+    fireOnce: true,
+    fireDelay: 15,
+    content: function(i, p, d) {
+    console.log(i, p, d)
+    var future = new Date();
+    future.setDate(future.getDate() - 29 - i);
+    var day = future.getDate();
+    var month = future.getMonth();
+    if (day < 10) {
+        day = "0" + day;
+        parseInt(day);
+    }
+    if (month < 10) {
+        month = "0" + month;
+        parseInt(month);
+    }
+    var year = future.getFullYear();
+    console.log (day,month,year);
+    var url = "http://tjanster.idg.se/dilbertimages/dil" + year + month + day + ".gif";
+    console.log (url);
+    return '<h3>' + year + month + day + '</h3>\n<p><img src="' + url + '" alt="dil' + year + month + day + ' .gif"/></p>';
+  }
+});
+</script>
+ENDHTML
 
 print $q->end_html;
 
