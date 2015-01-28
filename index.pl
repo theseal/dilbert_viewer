@@ -56,6 +56,7 @@ $(window).endlessScroll();
 $(window).endlessScroll({
     fireOnce: true,
     fireDelay: 15,
+    loader: '',
     content: function(i, p, d) {
     console.log(i, p, d)
     var future = new Date();
