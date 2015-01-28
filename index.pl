@@ -61,7 +61,7 @@ $(window).endlessScroll({
     var future = new Date();
     future.setDate(future.getDate() - 29 - i);
     var day = future.getDate();
-    var month = future.getMonth();
+    var month = future.getMonth() + 1;
     if (day < 10) {
         day = "0" + day;
         parseInt(day);
