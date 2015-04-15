@@ -57,10 +57,10 @@ $(window).endlessScroll({
     fireOnce: true,
     fireDelay: 15,
     loader: '',
-    content: function(i, p, d) {
-    console.log(i, p, d)
+    data: function(p) {
+    console.log(p)
     var future = new Date();
-    future.setDate(future.getDate() - 29 - i);
+    future.setDate(future.getDate() - 29 - p);
     var day = future.getDate();
     var month = future.getMonth() + 1;
     if (day < 10) {
@@ -75,7 +75,7 @@ $(window).endlessScroll({
     console.log (day,month,year);
     var url = "http://tjanster.idg.se/dilbertimages/dil" + year + month + day + ".gif";
     console.log (url);
-    return '<h3>' + year + month + day + '</h3>\n<p><img src="' + url + '" alt="dil' + year + month + day + ' .gif"/></p>';
+    return '<h3>' + year + month + day + '</h3>\n<p><img src="' + url + '" alt="dil' + year + month + day + ' .gif"/></p>\n';
   }
 });
 </script>
