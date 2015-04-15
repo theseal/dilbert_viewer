@@ -57,6 +57,7 @@ $(window).endlessScroll({
     fireOnce: true,
     fireDelay: 15,
     loader: '',
+    insertAfter: "h3:last+p",
     data: function(p) {
     console.log(p)
     var future = new Date();
