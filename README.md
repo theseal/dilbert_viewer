@@ -1,4 +1,4 @@
-dilbert_viewer
+dilbert\_viewer
 ==============
 
 dilbert is fun
