@@ -23,7 +23,7 @@ foreach (@keywords) {
         while () {
             $count++;
             my $date = strftime "%Y%m%d", localtime(time() + 24*60*60*$count);
-            my $url = "http://tjanster.idg.se/dilbertimages/dil$date.gif";
+            my $url = "http://dilbert.idg.se/dil$date.gif";
             my $response = $Client->get($url);
             my $content_type = $response->{headers}{'content-type'};
             if ( $content_type !~ /^image\/gif$/ ) {
@@ -74,7 +74,7 @@ $(window).endlessScroll({
     }
     var year = future.getFullYear();
     console.log (day,month,year);
-    var url = "http://tjanster.idg.se/dilbertimages/dil" + year + month + day + ".gif";
+    var url = "http://dilbert.idg.se/dil" + year + month + day + ".gif";
     console.log (url);
     return '<h3>' + year + month + day + '</h3>\n<p><img src="' + url + '" alt="dil' + year + month + day + ' .gif"/></p>\n';
   }
@@ -88,5 +88,5 @@ print $q->end_html;
 sub print_strip {
     my $date = shift;
     print $q->h3($date) . "\n";
-    print $q->p("<img src=\"http://tjanster.idg.se/dilbertimages/dil$date.gif\" alt=\"dil$date.gif\"/>") . "\n";
+    print $q->p("<img src=\"http://dilbert.idg.se/dil$date.gif\" alt=\"dil$date.gif\"/>") . "\n";
 }
