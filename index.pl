@@ -23,7 +23,7 @@ foreach (@keywords) {
         while () {
             $count++;
             my $date = strftime "%Y%m%d", localtime(time() + 24*60*60*$count);
-            my $url = "http://dilbert.idg.se/dil$date.gif";
+            my $url = "https://dilbert.idg.se/dil$date.gif";
             my $response = $Client->get($url);
             my $content_type = $response->{headers}{'content-type'};
             if ( $content_type !~ /^image\/gif$/ ) {
@@ -74,7 +74,7 @@ $(window).endlessScroll({
     }
     var year = future.getFullYear();
     console.log (day,month,year);
-    var url = "http://dilbert.idg.se/dil" + year + month + day + ".gif";
+    var url = "https://dilbert.idg.se/dil" + year + month + day + ".gif";
     console.log (url);
     return '<h3>' + year + month + day + '</h3>\n<p><img src="' + url + '" alt="dil' + year + month + day + ' .gif"/></p>\n';
   }
